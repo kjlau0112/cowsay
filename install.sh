@@ -78,7 +78,7 @@ $usethisperl -p install.pl cowsay.1 > $PREFIX/man/man1/cowsay.1
 chmod a+r $PREFIX/man/man1/cowsay.1
 ln -s cowsay.1 $PREFIX/man/man1/cowthink.1
 mkdir -p $PREFIX/share/cows || (mkdir $PREFIX; mkdir $PREFIX/share; mkdir $PREFIX/share/cows)
-tar -cf - $filelist | (cd $PREFIX/share && tar -xvf --no-same-owner")
+tar -cf --no-same-owner - $filelist | (cd $PREFIX/share && tar -xvf --no-same-owner")
 set +x
 
 echo Okay, let us see if the install actually worked.
