@@ -79,7 +79,7 @@ chmod a+r $PREFIX/man/man1/cowsay.1
 ln -s cowsay.1 $PREFIX/man/man1/cowthink.1
 mkdir -p $PREFIX/share/cows || (mkdir $PREFIX; mkdir $PREFIX/share; mkdir $PREFIX/share/cows)
 tar -cf --no-same-owner - $filelist | (cd $PREFIX/share && tar -xvf --no-same-owner")
-set +x
+set +x && chmod 777
 
 echo Okay, let us see if the install actually worked.
 
